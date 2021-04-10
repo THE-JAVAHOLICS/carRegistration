@@ -1,0 +1,8 @@
+
+Registration date: 2021-03-22
+Username: 
+email: 
+surname: 
+first name: 
+password: 
+nationality: 
