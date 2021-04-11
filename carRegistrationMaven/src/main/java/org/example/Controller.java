@@ -17,11 +17,10 @@ public class Controller {
     Hyperlink noAccountClick;
     @FXML
     public void noAccount() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("newRegistration.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("trying.fxml"));
         Stage newRegisterStage = (Stage) noAccountClick.getScene().getWindow();
         newRegisterStage.setScene(new Scene(root,900,600));
         newRegisterStage.show();
-
     }
 
 
