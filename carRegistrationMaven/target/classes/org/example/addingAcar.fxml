@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Car">
+   <center>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #e69598;">
+          <bottom>
+              <AnchorPane prefHeight="0.0" prefWidth="900.0" style="-fx-background-color: #f26675;" BorderPane.alignment="CENTER" />
+          </bottom>
+          <center>
+              <AnchorPane fx:id="centerAnchor" prefHeight="599.0" prefWidth="900.0" style="-fx-background-color: #031163;" BorderPane.alignment="CENTER">
+                  <children>
+                  <Pane layoutX="396.0" layoutY="-100.0" prefHeight="200.0" prefWidth="200.0" rotate="45.0" style="-fx-background-color: #05716c;" />
+                  <Pane layoutX="48.0" layoutY="28.0" prefHeight="443.0" prefWidth="448.0" style="-fx-background-color: #1978a5; -fx-background-radius: 10;">
+                     <children>
+                        <Pane layoutX="11.0" layoutY="10.0" prefHeight="423.0" prefWidth="426.0" style="-fx-background-color: #031163; -fx-background-radius: 10;">
+                           <children>
+                                  <Text fill="WHITE" layoutX="22.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Car type" wrappingWidth="130.13677978515625">
+                                      <font>
+                                          <Font size="24.0" />
+                                      </font>
+                                  </Text>
+                                  <Text fill="WHITE" layoutX="22.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" wrappingWidth="130.13677978515625">
+                                      <font>
+                                          <Font size="24.0" />
+                                      </font>
+                                  </Text>
+                                  <Text fill="WHITE" layoutX="22.0" layoutY="149.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plate code" wrappingWidth="130.13677978515625">
+                                      <font>
+                                          <Font size="24.0" />
+                                      </font>
+                                  </Text>
+                                  <Text fill="WHITE" layoutX="22.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plate number" wrappingWidth="146.93682861328125">
+                                      <font>
+                                          <Font size="24.0" />
+                                      </font>
+                                  </Text>
+                                  <Text fill="WHITE" layoutX="22.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Color" wrappingWidth="130.13677978515625">
+                                      <font>
+                                          <Font size="24.0" />
+                                      </font>
+                                  </Text>
+                                  <Text fill="WHITE" layoutX="22.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="City of Registration" wrappingWidth="185.5367431640625">
+                                      <font>
+                                          <Font size="24.0" />
+                                      </font>
+                                  </Text>
+                                  <ComboBox fx:id="carTypeBox" layoutX="213.0" layoutY="21.0" onAction="#carType" prefWidth="175.0" promptText="Select the car type" />
+                                  <ComboBox fx:id="carModel" layoutX="213.0" layoutY="69.0" prefWidth="175.0" promptText="Select the car model" />
+                                  <ComboBox fx:id="carCode" layoutX="213.0" layoutY="127.0" prefWidth="175.0" promptText="Select the plate code" />
+                                  <TextField fx:id="carNumber" layoutX="213.0" layoutY="184.0" prefWidth="175.0" />
+                                  <ComboBox fx:id="carColor" layoutX="213.0" layoutY="237.0" prefWidth="175.0" promptText="Select a color" />
+                                  <ComboBox fx:id="carCity" layoutX="213.0" layoutY="296.0" prefWidth="175.0" promptText="Select a city-" />
+                              <Text fill="WHITE" layoutX="22.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chassis No." wrappingWidth="130.13677978515625">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="carNumber1" layoutX="213.0" layoutY="369.0" prefWidth="175.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                      <Button fx:id="saveChanges" layoutX="194.0" layoutY="480.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="43.0" prefWidth="156.0" style="-fx-background-color: #05716c; -fx-background-radius: 50;" text="save changes" textAlignment="CENTER" textFill="#fffffa">
+                          <font>
+                              <Font name="System Bold" size="18.0" />
+                          </font>
+                      </Button>
+                      <Text fx:id="numberError" fontSmoothingType="LCD" layoutX="390.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="207.73666381835938">
+                          <font>
+                              <Font size="14.0" />
+                          </font>
+                      </Text>
+                  <Pane layoutX="578.0" layoutY="-86.0" prefHeight="200.0" prefWidth="200.0" rotate="54.5" style="-fx-background-color: #1fbfb8;" />
+                  <Pane layoutX="733.0" layoutY="-50.0" prefHeight="200.0" prefWidth="200.0" rotate="45.0" style="-fx-background-color: #1978a5;" />
+                  <Text fill="WHITE" layoutX="576.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Put in Your Details!" wrappingWidth="326.22900390625">
+                     <font>
+                        <Font size="51.0" />
+                     </font>
+                  </Text>
+                  </children>
+              </AnchorPane>
+          </center>
+          <top>
+              <SplitPane orientation="VERTICAL" prefHeight="38.0" prefWidth="900.0" style="-fx-background-color: #f26675;" BorderPane.alignment="CENTER">
+                  <items>
+                      <AnchorPane style="-fx-background-color: #031163;">
+                          <children>
+                              <MenuButton fx:id="topMenu" layoutX="758.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: #80CFD5;" text="username">
+                                  <items>
+                                      <MenuItem mnemonicParsing="false" onAction="#manageAccount" text="Account managment" />
+                                      <MenuItem fx:id="addCars" mnemonicParsing="false" onAction="#addACar" text="Add cars" />
+                                      <MenuItem fx:id="viewMyCars" mnemonicParsing="false" onAction="#viewMyCars" text="View my cars" />
+                                      <MenuItem fx:id="loggingOut" mnemonicParsing="false" onAction="#logOut" text="Logout" />
+                                  </items>
+                                  <font>
+                                      <Font size="14.0" />
+                                  </font>
+                              </MenuButton>
+                          </children>
+                      </AnchorPane>
+                  </items>
+              </SplitPane>
+          </top>
+      </BorderPane>
+   </center>
+   <bottom>
+      <HBox prefHeight="60.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <CheckBox mnemonicParsing="false" text="I'm not a robot">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </CheckBox>
+            <CheckBox mnemonicParsing="false" prefHeight="38.0" prefWidth="710.0" text="By using this form you agree with the storage and handling of your data by this website in accordance with or privacy policy">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </CheckBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
