@@ -6,34 +6,46 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #8cbed6;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #8cbed6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
    <right>
-      <AnchorPane prefHeight="458.0" prefWidth="280.0" style="-fx-background-color: #87ceeb;" BorderPane.alignment="CENTER_RIGHT">
+      <AnchorPane prefHeight="458.0" prefWidth="280.0" style="-fx-background-color: #1AA6B7;" BorderPane.alignment="CENTER_RIGHT">
          <children>
-            <TextField id="Username" fx:id="username" layoutX="66.0" layoutY="139.0" promptText="Username" />
-            <Button fx:id="signIn" layoutX="114.0" layoutY="216.0" mnemonicParsing="false" onAction="#signingIn" text="Sign in" />
-            <PasswordField layoutX="66.0" layoutY="175.0" promptText="Password" />
+            <TextField id="Username" fx:id="usernam_main" layoutX="66.0" layoutY="139.0" promptText="Username" />
+            <Button fx:id="signIn" layoutX="114.0" layoutY="216.0" mnemonicParsing="false" onAction="#signingIn" style="-fx-background-color: #FE424D;" text="Sign in" textFill="WHITE" />
+            <PasswordField fx:id="password_main" layoutX="66.0" layoutY="175.0" promptText="Password" />
             <TextFlow layoutX="42.0" layoutY="287.0" prefHeight="18.0" prefWidth="157.0" textAlignment="CENTER" />
-            <Hyperlink fx:id="noAccountClick" layoutX="73.0" layoutY="252.0" onAction="#noAccount" text="Don't have an account?" textAlignment="CENTER" textFill="#2600ff" wrapText="true">
+            <Hyperlink fx:id="noAccountClick" layoutX="73.0" layoutY="252.0" onAction="#noAccount" text="Don't have an account?" textAlignment="CENTER" textFill="#daecf3" wrapText="true">
                <font>
-                  <Font name="Arial" size="12.0" />
                </font>
             </Hyperlink>
+            <Pane layoutX="47.0" layoutY="46.0" prefHeight="69.0" prefWidth="200.0" style="-fx-background-color: #FE424D; -fx-background-radius: 15;">
+               <children>
+                  <Text fill="#daecf3" layoutX="36.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP!">
+                     <font>
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </right>
    <left>
-      <AnchorPane prefHeight="450.0" prefWidth="419.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="450.0" prefWidth="419.0" style="-fx-background-color: #022D41 #022D41;" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="#00597c" layoutX="61.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" textAlignment="CENTER" wrappingWidth="297.57623291015625">
-               <font>
-                  <Font name="Times New Roman Bold" size="64.0" />
-               </font>
-            </Text>
+            <Pane layoutX="54.0" layoutY="-71.0" prefHeight="192.0" prefWidth="214.0" rotate="45.0" style="-fx-background-color: #daecf3#daecf3;" />
+            <Pane layoutX="54.0" layoutY="89.0" prefHeight="192.0" prefWidth="214.0" rotate="41.2" style="-fx-background-color: #FE424D;">
+               <children>
+                  <Text fill="#daecf3" layoutX="-11.0" layoutY="101.0" rotate="-36.9" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME!">
+                     <font>
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane layoutX="67.0" layoutY="248.0" prefHeight="192.0" prefWidth="214.0" rotate="36.9" style="-fx-background-color: #1AA6B7;" />
          </children></AnchorPane>
    </left>
 </BorderPane>

@@ -10,6 +10,8 @@ import javafx.scene.control.Hyperlink;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 
 public class Controller {
 
@@ -31,6 +33,8 @@ public class Controller {
     public void signingIn() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
         Stage signingInStage = (Stage) signIn.getScene().getWindow();
+        /*String css = App.class.getResource("newCSS.css").toExternalForm();
+        root.getStylesheets().add(css);*/
         signingInStage.setScene(new Scene(root,900,600));
         signingInStage.show();
     }
@@ -46,6 +50,13 @@ public class Controller {
         carAdd.show();
     }
 
+     @FXML
+    private PasswordField password_main;
+     
+    @FXML
+    private TextField usernam_main;
+
+    
     @FXML
     private Button loggingOut;
     @FXML
