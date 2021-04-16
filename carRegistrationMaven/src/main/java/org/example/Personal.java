@@ -1,3 +1,4 @@
+
 package org.example;
 
 import javafx.event.ActionEvent;
@@ -87,6 +88,7 @@ public class Personal {
                 "\nnationality: " + nationalityReg.getText());
         filePrinting();
     }
+
 
 
 }
