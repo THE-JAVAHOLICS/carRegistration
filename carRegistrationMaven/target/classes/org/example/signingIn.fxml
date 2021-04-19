@@ -1,31 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+<BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
    <center>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1d3557#1d3557;">
+      <AnchorPane prefHeight="415.0" prefWidth="600.0" style="-fx-background-color: #1d3557#1d3557;">
          <children>
-            <AnchorPane layoutX="3.0" layoutY="-3.0" prefHeight="400.0" prefWidth="209.0" style="-fx-background-color: #27436B#27436B;">
+            <AnchorPane layoutX="3.0" layoutY="-3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="209.0" style="-fx-background-color: #27436B#27436B;">
                <children>
                   <VBox layoutX="55.0" layoutY="122.0" prefHeight="232.0" prefWidth="100.0" spacing="10.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="114.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Manage " textFill="WHITE" />
-                        <Button fx:id="addACarButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addingACar" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Add a Car" textFill="WHITE" />
-                        <Button fx:id="loggingOut" layoutX="10.0" layoutY="90.0" mnemonicParsing="false" onAction="#logOut" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Log Out" textFill="WHITE" />
+                        <Button fx:id="accountManage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accountManagement" prefHeight="70.0" prefWidth="114.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Manage " textFill="WHITE" />
+                        <Button fx:id="addACarButton" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addingACar" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Add a Car" textFill="WHITE" />
+                        <Button fx:id="loggingOut" layoutX="10.0" layoutY="90.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logOut" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Log Out" textFill="WHITE" />
                      </children>
                   </VBox>
-                  <Pane layoutX="2.0" layoutY="29.0" prefHeight="68.0" prefWidth="204.0" style="-fx-background-color: #e63946#e63946; -fx-background-radius: 15;">
+                  <Pane layoutX="2.0" layoutY="29.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="204.0" style="-fx-background-color: #e63946#e63946; -fx-background-radius: 15;">
                      <children>
                         <Text fill="WHITE" layoutX="19.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome User!">
                            <font>
@@ -41,39 +39,23 @@
          </children>
       </AnchorPane>
    </center>
-   <top>
-      <MenuBar style="-fx-background-color: #00A8A8#00A8A8;" BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-   </top>
-   <bottom>
-      <HBox style="-fx-background-color: #e63946#e63946;" BorderPane.alignment="CENTER">
-         <children>
-            <Label text="javaholics">
-               <HBox.margin>
-               </HBox.margin>
-            </Label>
-         </children>
-         <opaqueInsets>
-         </opaqueInsets>
-      </HBox>
-   </bottom>
    <cursor>
    </cursor>
+   <top>
+      <AnchorPane prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: #00A8A8#00A8A8;" BorderPane.alignment="CENTER">
+         <children>
+            <MenuButton fx:id="topMenu" layoutX="454.0" layoutY="2.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" style="-fx-background-color: #00A8A8#00A8A8;" text="username" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <items>
+                  <MenuItem fx:id="accountManager" mnemonicParsing="false" onAction="#menuItem" text="Account management" />
+                  <MenuItem fx:id="addCars" mnemonicParsing="false" onAction="#menuItem" text="Add cars" />
+                  <MenuItem fx:id="viewMyCars" mnemonicParsing="false" onAction="#menuItem" text="View my cars" />
+                  <MenuItem fx:id="loggingOut1" mnemonicParsing="false" onAction="#menuItem" text="Logout" />
+               </items>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </MenuButton>
+         </children>
+      </AnchorPane>
+   </top>
 </BorderPane>
