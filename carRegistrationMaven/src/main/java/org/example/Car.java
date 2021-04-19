@@ -15,6 +15,7 @@ import javafx.scene.chart.ScatterChart;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -26,16 +27,9 @@ import java.util.ResourceBundle;
 
 public class Car<WebView> implements Initializable{
 
-
-
     @FXML
-    private Button car1;
+    private BorderPane mainPane;
 
-    @FXML
-    private Button car2;
-
-    @FXML
-    private Button car3;
 
     @FXML
     private Button saveChanges;
@@ -56,34 +50,7 @@ public class Car<WebView> implements Initializable{
     public Car() {
     }
 
-    @FXML
-    public void logOut() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
-        Stage loggingOut = (Stage) topMenu.getScene().getWindow();
-        loggingOut.setScene(new Scene(root,900,600));
-        loggingOut.show();
 
-    }
-
-    public void viewMyCars(){
-        borderPane.setCenter(new Label("ME"));
-    }
-
-    public void manageAccount() throws Exception {
-
-//        Parent root = FXMLLoader.load(getClass().getResource("manageAccount.fxml"));
-//        Stage managingAccount = (Stage) topMenu.getScene().getWindow();
-//        managingAccount.setScene(new Scene(root, 900, 600));
-//        managingAccount.show();
-    }
-
-    @FXML
-    public void addACar() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("addingACar.fxml"));
-        Stage addingCars = (Stage) topMenu.getScene().getWindow();
-        addingCars.setScene(new Scene(root, 900, 600));
-        addingCars.show();
-    }
 
 
     @FXML
@@ -162,6 +129,9 @@ public class Car<WebView> implements Initializable{
             numberError.setText("Please type a number");
         }
 
+
     }
+
+
 
 }
