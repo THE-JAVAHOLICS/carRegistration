@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\Car.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\accountManagement.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\Personal.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\Controller.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\module-info.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\App.java
+=======
+C:\Users\saud\carRegistration\carRegistrationMaven\src\main\java\org\example\mySqlConnect.java
+C:\Users\saud\carRegistration\carRegistrationMaven\src\main\java\module-info.java
+C:\Users\saud\carRegistration\carRegistrationMaven\src\main\java\org\example\Controller.java
+C:\Users\saud\carRegistration\carRegistrationMaven\src\main\java\org\example\Car.java
+C:\Users\saud\carRegistration\carRegistrationMaven\src\main\java\org\example\Personal.java
+C:\Users\saud\carRegistration\carRegistrationMaven\src\main\java\org\example\App.java
+>>>>>>> Saud

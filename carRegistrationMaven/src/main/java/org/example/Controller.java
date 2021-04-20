@@ -11,13 +11,18 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.net.URL;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javax.swing.*;
+
+
 
 public class Controller {
-
-
-
 
     @FXML
     Hyperlink noAccountClick;
@@ -72,8 +77,6 @@ public class Controller {
 
     }
 
-
-
     @FXML
     public void signingIn() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
@@ -85,13 +88,10 @@ public class Controller {
     }
 
 
-
     @FXML
     public void accountManagement(ActionEvent event) throws Exception {
         menuItem(event);
     }
-
-
 
     @FXML
     public void addingACar(ActionEvent event) throws Exception{
@@ -107,7 +107,6 @@ public class Controller {
         newRegisterStage.show();
 
     }
-
 
 
     @FXML
@@ -130,9 +129,6 @@ public class Controller {
 
     }
 
-
-
-
     private Pane view;
 
     @FXML
@@ -149,10 +145,36 @@ public class Controller {
 
         return view;
 
+
     }
 
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    @FXML
+    private void signingIn (ActionEvent event) throws Exception{
+        conn = mySqlConnect.ConnectDb();
+        String sql = "Select * from users where username = ? and password = ? ";
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, usernam_main.getText());
+            pst.setString(2, password_main.getText());
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Username And Password is corect");
+                signIn.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
 
-
-
+            } else
+                JOptionPane.showMessageDialog(null, "Invalid Username or Password ");
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
 
 }
