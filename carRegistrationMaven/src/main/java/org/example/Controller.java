@@ -161,7 +161,7 @@ public class Controller {
             pst.setString(2, password_main.getText());
             rs = pst.executeQuery();
             if (rs.next()) {
-                JOptionPane.showMessageDialog(null, "Username And Password is corect");
+                JOptionPane.showMessageDialog(null, "Username And Password is correct");
                 signIn.getScene().getWindow().hide();
                 Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
                 Stage mainStage = new Stage();

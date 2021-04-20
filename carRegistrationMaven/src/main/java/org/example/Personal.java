@@ -62,8 +62,8 @@ public class Personal {
         try {
             pst = conn.prepareStatement(sql);
             pst.setString(1, usernameReg.getText());
-            pst.setString(2, emailReg.getText());
-            pst.setString(3, passwordReg.getText());
+            pst.setString(2, passwordReg.getText());
+            pst.setString(3, emailReg.getText());
             pst.setString(4, surNameReg.getText());
             pst.setString(5, firstNameReg.getText());
             pst.setString(6, nationalityReg.getText());
