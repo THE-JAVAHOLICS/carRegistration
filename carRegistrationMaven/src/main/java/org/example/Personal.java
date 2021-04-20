@@ -55,7 +55,7 @@ public class Personal {
         ResultSet rs = null;
         PreparedStatement pst = null;
 
-    public void registerAction(ActionEvent event){
+    public void registerAction(ActionEvent event) throws Exception {
         conn = mySqlConnect.ConnectDb();
         String sql ="INSERT INTO `users`(`username`, `password`, `email`, `Surname`, `First name`, `Nationality`) VALUES (?,?,?,?,?,?)";
 
@@ -72,7 +72,7 @@ public class Personal {
         }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-
+    cancelAction();
         }
 
 
