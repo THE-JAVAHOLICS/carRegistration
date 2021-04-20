@@ -11,8 +11,14 @@ import javafx.scene.control.Hyperlink;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import javax.swing.*;
 
 public class Controller {
 
@@ -30,6 +36,38 @@ public class Controller {
 
     @FXML
     private Button signIn;
+
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    @FXML
+    private void signingIn (ActionEvent event) throws Exception{
+        conn = mySqlConnect.ConnectDb();
+        String sql = "Select * from users where username = ? and password = ? ";
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, usernam_main.getText());
+            pst.setString(2, password_main.getText());
+            rs = pst.executeQuery();
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "Username And Password is corect");
+                signIn.getScene().getWindow().hide();
+                Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
+                Stage mainStage = new Stage();
+                Scene scene = new Scene(root);
+                mainStage.setScene(scene);
+                mainStage.show();
+
+            } else
+                JOptionPane.showMessageDialog(null, "Invalid Username or Password ");
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+
+
+
     @FXML
     public void signingIn() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
@@ -39,6 +77,8 @@ public class Controller {
         signingInStage.setScene(new Scene(root,900,600));
         signingInStage.show();
     }
+
+
 
     @FXML
     private Button addACarButton;

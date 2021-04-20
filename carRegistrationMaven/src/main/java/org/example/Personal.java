@@ -11,7 +11,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.text.DateFormat;
 import java.time.LocalDate;
 
@@ -46,8 +50,31 @@ public class Personal {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         Stage newRegisterStage = (Stage) registrationButton.getScene().getWindow();
         newRegisterStage.setScene(new Scene(root, 700, 450));
+}
+        Connection conn = null;
+        ResultSet rs = null;
+        PreparedStatement pst = null;
 
-    }
+    public void registerAction(ActionEvent event){
+        conn = mySqlConnect.ConnectDb();
+        String sql ="INSERT INTO `users`(`username`, `password`, `email`, `Surname`, `First name`, `Nationality`) VALUES (?,?,?,?,?,?)";
+
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, usernameReg.getText());
+            pst.setString(2, emailReg.getText());
+            pst.setString(3, passwordReg.getText());
+            pst.setString(4, surNameReg.getText());
+            pst.setString(5, firstNameReg.getText());
+            pst.setString(6, nationalityReg.getText());
+            pst.execute();
+            JOptionPane.showMessageDialog(null, "Saved");
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+        }
+
 
     @FXML
     private Button cancelButton;

@@ -3,3 +3,4 @@ module-info.class
 org\example\Controller.class
 org\example\App.class
 org\example\Car.class
+org\example\mySqlConnect.class
