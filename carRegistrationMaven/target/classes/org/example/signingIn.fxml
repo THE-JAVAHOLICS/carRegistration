@@ -46,10 +46,10 @@
          <children>
             <MenuButton fx:id="topMenu" layoutX="454.0" layoutY="2.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" style="-fx-background-color: #00A8A8#00A8A8;" text="username" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <items>
-                  <MenuItem fx:id="accountManager" mnemonicParsing="false" onAction="#menuItem" text="Account management" />
-                  <MenuItem fx:id="addCars" mnemonicParsing="false" onAction="#menuItem" text="Add cars" />
-                  <MenuItem fx:id="viewMyCars" mnemonicParsing="false" onAction="#menuItem" text="View my cars" />
-                  <MenuItem fx:id="loggingOut1" mnemonicParsing="false" onAction="#menuItem" text="Logout" />
+                  <MenuItem fx:id="accountManagement_Menu" mnemonicParsing="false" onAction="#menuItem" text="Account management" />
+                  <MenuItem fx:id="addCars_Menu" mnemonicParsing="false" onAction="#menuItem" text="Add cars" />
+                  <MenuItem fx:id="viewMyCars_Menu" mnemonicParsing="false" onAction="#menuItem" text="View my cars" />
+                  <MenuItem fx:id="loggingOut_Menu" mnemonicParsing="false" onAction="#menuItem" text="Logout" />
                </items>
                <font>
                   <Font size="14.0" />

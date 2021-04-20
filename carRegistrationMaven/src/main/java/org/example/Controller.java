@@ -16,8 +16,53 @@ import java.net.URL;
 
 public class Controller {
 
+
+
+
     @FXML
     Hyperlink noAccountClick;
+
+    @FXML
+    private Button signIn;
+
+    @FXML
+    private Button accountManage;
+
+    @FXML
+    private Button addACarButton;
+
+    @FXML
+    private PasswordField password_main;
+
+    @FXML
+    private TextField usernam_main;
+
+
+    @FXML
+    private Button loggingOut;
+
+    @FXML
+    private MenuItem accountManagement_Menu;
+
+    @FXML
+    private MenuItem addCars_Menu;
+
+    @FXML
+    private MenuItem viewMyCars_Menu;
+
+    @FXML
+    private MenuItem loggingOut_Menu;
+
+
+    @FXML
+    BorderPane mainPane;
+
+
+    @FXML
+    private MenuButton topMenu;
+
+
+
     @FXML
     public void noAccount() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("newRegistration.fxml"));
@@ -28,8 +73,7 @@ public class Controller {
     }
 
 
-    @FXML
-    private Button signIn;
+
     @FXML
     public void signingIn() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
@@ -40,31 +84,21 @@ public class Controller {
         signingInStage.show();
     }
 
-    @FXML
-    private Button accountManage;
+
 
     @FXML
     public void accountManagement(ActionEvent event) throws Exception {
         menuItem(event);
     }
 
-    @FXML
-    private Button addACarButton;
+
 
     @FXML
     public void addingACar(ActionEvent event) throws Exception{
      menuItem(event);
     }
 
-     @FXML
-    private PasswordField password_main;
 
-    @FXML
-    private TextField usernam_main;
-
-
-    @FXML
-    private Button loggingOut;
     @FXML
     public void logOut() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
@@ -74,37 +108,20 @@ public class Controller {
 
     }
 
-    @FXML
-    private MenuItem accountManager;
 
-    @FXML
-    private MenuItem addCars;
-
-    @FXML
-    private MenuItem viewMyCars;
-
-    @FXML
-    private MenuItem loggingOut1;
-
-
-    @FXML
-    BorderPane mainPane;
-
-
-    @FXML
-    private MenuButton topMenu;
 
     @FXML
     public void menuItem(ActionEvent event) throws Exception {
-        if (event.getSource() == loggingOut1) {
+        if (event.getSource() == loggingOut_Menu) {
            logOut();
-        } else if(event.getSource() == accountManager || event.getSource() == accountManage){
+
+        } else if(event.getSource() == accountManagement_Menu || event.getSource() == accountManage){
 
             System.out.println("You clicked accountManagement");
             Pane view = getPage("accountManagement");
             mainPane.setCenter(view);
 
-        }else if(event.getSource() == addCars || event.getSource()==addACarButton) {
+        }else if(event.getSource() == addCars_Menu || event.getSource()==addACarButton) {
 
             System.out.println("You clicked addCars");
             Pane view = getPage("addingAcar");
