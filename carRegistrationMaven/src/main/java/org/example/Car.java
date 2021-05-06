@@ -8,6 +8,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import java.sql.*;
+
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,17 +21,25 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class Car<WebView> implements Initializable{
+public class Car<WebView> implements Initializable {
+
 
     @FXML
     private BorderPane mainPane;
 
+
+    @FXML
+    private TextField usernam_main;
 
     @FXML
     private Button saveChanges;
@@ -47,6 +57,9 @@ public class Car<WebView> implements Initializable{
     @FXML
     BorderPane borderPane;
 
+    @FXML
+    private TextField username_car;
+
     public Car() {
     }
 
@@ -63,8 +76,10 @@ public class Car<WebView> implements Initializable{
 
     @FXML
     private ComboBox<String> carCity;
+    @FXML
+    private TextField CarChassis;
 
-    @Override
+    /*@Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList carTypeList = FXCollections.observableArrayList("Ferrari", "Toyota","lamb","");
         carTypeBox.setItems(carTypeList);
@@ -80,6 +95,8 @@ public class Car<WebView> implements Initializable{
 
 
     }
+*/
+
 
     public List<Character> alphabeticalGenerator(){
         List<Character> characters = new ArrayList<>();
@@ -113,12 +130,12 @@ public class Car<WebView> implements Initializable{
         }
 
     }
-
     @FXML
     private Text numberError;
-
+    String name;
     public void saveChanges() throws Exception{
         try {
+            System.out.println(name);
             if (Integer.parseInt(carNumber.getText()) <= 99999 && Integer.parseInt(carNumber.getText()) > 0) {
                 System.out.println(Integer.parseInt(carNumber.getText()));
                 numberError.setText(null);
@@ -129,6 +146,69 @@ public class Car<WebView> implements Initializable{
             numberError.setText("Please type a number");
         }
 
+
+    }
+
+
+
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList carTypeList = FXCollections.observableArrayList("Ferrari", "Toyota","lamb","");
+        carTypeBox.getItems().addAll(carTypeList);
+
+        ObservableList carColorList = FXCollections.observableArrayList("Bronze", "Red", "Gold", "Silver", "White", "Black");
+        carColor.getItems().addAll(carColorList);
+
+        ObservableList carCityList = FXCollections.observableArrayList("Abu Dhabi", "Dubai", "Sharjah", "Umm al-Qaiwain", "Fujairah", "Ajman", "Ra's al-Khaimah");
+        carCity.getItems().addAll(carCityList);
+
+        ObservableList carAlphaList = FXCollections.observableArrayList(alphabeticalGenerator());
+        carCode.getItems().addAll(carAlphaList);
+
+
+    }
+    Connection conn = null;
+    ResultSet rs = null;
+    PreparedStatement pst = null;
+    PreparedStatement pst_id = null;
+    public void saveChanges(ActionEvent event) throws Exception {
+        conn = mySqlConnect.ConnectDb();
+
+        String sql ="INSERT INTO `cars`(`Car type`, `model`, `Plate code`, `Plate number`, `Color`, `City`, `Chassis`, `username`)" +
+                " VALUES (?,?,?,?,?,?,?,?)";
+       // String sql_id = "SELECT user_id FROM users WHERE ";
+
+        try {
+        //    pst_id=conn.prepareStatement(sql_id);
+          //  ResultSet rs_id = pst_id.executeQuery(sql_id);
+           // while(rs_id.next()) {
+                //Retrieve by column name
+            //    int id = rs_id.getInt("user_id");
+                //Display values
+            //    System.out.print("ID: " + id);
+              //  if (true) {
+                    pst = conn.prepareStatement(sql);
+                    pst.setString(1, carTypeBox.getValue().toString());
+                    pst.setString(2, carModel.getValue().toString());
+                    pst.setString(3, carCode.getValue().toString());
+                    pst.setString(4, carNumber.getText());
+                    pst.setString(5, carColor.getValue().toString());
+                    pst.setString(6, carCity.getValue().toString());
+                    pst.setString(7, CarChassis.getText());
+                    pst.setString(8, name );
+                    pst.execute();
+               // }
+             //   break;
+          //  }
+          //  int val =  ((Number) rs_id.getObject(1)).intValue();
+          //  rs_id.close();
+            JOptionPane.showMessageDialog(null, "Saved");
+        }catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
 
     }
 

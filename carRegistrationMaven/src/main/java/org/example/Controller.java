@@ -65,28 +65,9 @@ public class Controller {
 
     @FXML
     private MenuButton topMenu;
-
-
-
-    @FXML
-    public void noAccount() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("newRegistration.fxml"));
-        Stage newRegisterStage = (Stage) noAccountClick.getScene().getWindow();
-        newRegisterStage.setScene(new Scene(root,900,600));
-        newRegisterStage.show();
-
+    public void setTopMenu(String text) {
+        topMenu.setText(text);
     }
-
-    @FXML
-    public void signingIn() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("signingIn.fxml"));
-        Stage signingInStage = (Stage) signIn.getScene().getWindow();
-        /*String css = App.class.getResource("newCSS.css").toExternalForm();
-        root.getStylesheets().add(css);*/
-        signingInStage.setScene(new Scene(root,900,600));
-        signingInStage.show();
-    }
-
 
     @FXML
     public void accountManagement(ActionEvent event) throws Exception {
@@ -111,42 +92,45 @@ public class Controller {
 
     @FXML
     public void menuItem(ActionEvent event) throws Exception {
-        if (event.getSource() == loggingOut_Menu) {
-           logOut();
 
+        if (event.getSource() == loggingOut_Menu) {
+            logOut();
         } else if(event.getSource() == accountManagement_Menu || event.getSource() == accountManage){
 
             System.out.println("You clicked accountManagement");
-            Pane view = getPage("accountManagement");
+            Parent view = getPage("accountManagement");
             mainPane.setCenter(view);
-
         }else if(event.getSource() == addCars_Menu || event.getSource()==addACarButton) {
 
             System.out.println("You clicked addCars");
-            Pane view = getPage("addingAcar");
+            Parent view = getPage("addingAcar");
             mainPane.setCenter(view);
         }
 
     }
 
-    private Pane view;
 
+    private Parent view;
     @FXML
-    public Pane getPage(String fileName) {
+    public Parent getPage(String fileName) {
         try {
-            URL fileUrl = Controller.class.getResource("/org/example/"+fileName+".fxml");
+            FXMLLoader fileUrl = new FXMLLoader(getClass().getResource("/org/example/"+fileName+".fxml"));
             if (fileUrl == null) {
                 throw new java.io.FileNotFoundException("FXML file can't be found");
             }
-            view =new FXMLLoader().load(fileUrl);
+            view = fileUrl.load();
+            Car car = fileUrl.getController();
+            car.name = topMenu.getText();
         } catch (Exception e){
             System.out.println("No page " + fileName + " please check FxmlLoader.");
         }
 
         return view;
 
-
     }
+
+
+
 
     Connection conn = null;
     ResultSet rs = null;
@@ -154,6 +138,7 @@ public class Controller {
     @FXML
     private void signingIn (ActionEvent event) throws Exception{
         conn = mySqlConnect.ConnectDb();
+
         String sql = "Select * from users where username = ? and password = ? ";
         try {
             pst = conn.prepareStatement(sql);

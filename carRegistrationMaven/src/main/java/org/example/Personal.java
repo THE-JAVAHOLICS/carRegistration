@@ -57,7 +57,7 @@ public class Personal {
 
     public void registerAction(ActionEvent event) throws Exception {
         conn = mySqlConnect.ConnectDb();
-        String sql ="INSERT INTO `users`(`username`, `password`, `email`, `Surname`, `First name`, `Nationality`) VALUES (?,?,?,?,?,?)";
+        String sql ="INSERT INTO `users`(`username`, `password`, `email`, `Surname`, `First name`, `Nationality` ) VALUES (?,?,?,?,?,?)";
 
         try {
             pst = conn.prepareStatement(sql);
