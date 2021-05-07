@@ -20,6 +20,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.controlsfx.validation.ValidationSupport;
+import org.controlsfx.validation.Validator;
 
 import javax.swing.*;
 import java.io.IOException;
@@ -152,7 +154,7 @@ public class Car<WebView> implements Initializable {
 
 
 
-
+    ValidationSupport valid = new ValidationSupport();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -168,6 +170,7 @@ public class Car<WebView> implements Initializable {
         ObservableList carAlphaList = FXCollections.observableArrayList(alphabeticalGenerator());
         carCode.getItems().addAll(carAlphaList);
 
+        valid.registerValidator(carNumber, Validator.createEmptyValidator("Text Required") );
 
     }
     Connection conn = null;
