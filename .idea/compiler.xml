@@ -7,8 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mavenCar" />
-        <module name="carRegistrationMaven" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mavenCar" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

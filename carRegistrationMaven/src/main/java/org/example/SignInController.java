@@ -17,7 +17,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 
-public class signInController {
+public class SignInController {
     @FXML
     private TextField usernam_main;
     @FXML

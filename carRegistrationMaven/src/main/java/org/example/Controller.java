@@ -130,7 +130,7 @@ public class Controller {
     }
 
 
-
+/*
 
     Connection conn = null;
     ResultSet rs = null;
@@ -138,7 +138,6 @@ public class Controller {
     @FXML
     private void signingIn (ActionEvent event) throws Exception{
         conn = mySqlConnect.ConnectDb();
-
         String sql = "Select * from users where username = ? and password = ? ";
         try {
             pst = conn.prepareStatement(sql);
@@ -161,5 +160,5 @@ public class Controller {
             JOptionPane.showMessageDialog(null,e);
         }
     }
-
+*/
 }

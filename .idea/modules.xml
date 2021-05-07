@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/carRegistration.iml" filepath="$PROJECT_DIR$/.idea/carRegistration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/carRegistrationMaven/mavenCar.iml" filepath="$PROJECT_DIR$/carRegistrationMaven/mavenCar.iml" />
     </modules>
   </component>
 </project>

@@ -2,9 +2,6 @@ org\example\Personal.class
 org\example\accountManagement.class
 org\example\Controller.class
 org\example\Car.class
-<<<<<<< HEAD
+org\example\mySqlConnect.class
 module-info.class
 org\example\App.class
-=======
-org\example\mySqlConnect.class
->>>>>>> Saud
