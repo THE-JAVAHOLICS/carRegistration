@@ -9,8 +9,8 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Circle?>
 
-<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.accountManagement">
-   <right>
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.accountManagement">
+   <center>
       <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #07617D;" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="211.0" layoutY="290.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="59.0" prefWidth="178.0" style="-fx-background-color: #303841; -fx-background-radius: 15;" text="Save Changes" textFill="WHITE" />
@@ -36,5 +36,5 @@
             <Circle fill="#303841" layoutX="527.0" layoutY="73.0" radius="14.0" stroke="#303841" strokeType="INSIDE" />
          </children>
       </AnchorPane>
-   </right>
+   </center>
 </BorderPane>

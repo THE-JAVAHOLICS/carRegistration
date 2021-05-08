@@ -10,22 +10,31 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="mainPane" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
    <center>
       <AnchorPane prefHeight="415.0" prefWidth="600.0" style="-fx-background-color: #1d3557#1d3557;">
          <children>
-            <AnchorPane layoutX="3.0" layoutY="-3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="209.0" style="-fx-background-color: #27436B#27436B;">
+            <AnchorPane layoutX="3.0" layoutY="-3.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="334.0" style="-fx-background-color: #27436B#27436B;">
                <children>
                   <VBox layoutX="55.0" layoutY="122.0" prefHeight="232.0" prefWidth="100.0" spacing="10.0">
                      <children>
-                        <Button fx:id="accountManage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accountManagement" prefHeight="70.0" prefWidth="114.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Manage " textFill="WHITE" />
-                        <Button fx:id="addACarButton" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addingACar" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Add a Car" textFill="WHITE" />
-                        <Button fx:id="loggingOut" layoutX="10.0" layoutY="90.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logOut" prefHeight="70.0" prefWidth="100.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Log Out" textFill="WHITE" />
+                        <Button fx:id="accountManage" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#accountManagement" prefHeight="120.0" prefWidth="220.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Manage " textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Button>
+                        <Button fx:id="addACarButton" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addingACar" prefHeight="120.0" prefWidth="220.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Add a Car" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Button>
+                        <Button fx:id="loggingOut" layoutX="10.0" layoutY="90.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logOut" prefHeight="120.0" prefWidth="220.0" style="-fx-background-color: #00A8A8#00A8A8;" text="Log Out" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Button>
                      </children>
                   </VBox>
-                  <Pane layoutX="2.0" layoutY="29.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="204.0" style="-fx-background-color: #e63946#e63946; -fx-background-radius: 15;">
+                  <Pane layoutX="57.0" layoutY="9.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="94.0" prefWidth="224.0" style="-fx-background-color: #e63946#e63946; -fx-background-radius: 15;">
                      <children>
-                        <Text fill="WHITE" layoutX="19.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome User!">
+                        <Text fill="WHITE" layoutX="50.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 24; -fx-font-weight: bold;" text="Welcome User!" textAlignment="CENTER" wrappingWidth="124.85665893554688">
                            <font>
                            </font>
                         </Text>
@@ -33,16 +42,16 @@
                   </Pane>
                </children>
             </AnchorPane>
-            <Pane layoutX="280.0" layoutY="27.0" prefHeight="172.0" prefWidth="272.0" style="-fx-background-color: #e63946#e63946; -fx-background-radius: 50;" />
-            <Pane layoutX="216.0" layoutY="131.0" prefHeight="172.0" prefWidth="272.0" style="-fx-background-color: #00A8A8#00A8A8; -fx-background-radius: 50;" />
-            <Pane layoutX="311.0" layoutY="218.0" prefHeight="172.0" prefWidth="272.0" style="-fx-background-color: #27436B#27436B; -fx-background-radius: 50;" />
+            <Pane layoutX="539.0" layoutY="101.0" prefHeight="172.0" prefWidth="272.0" style="-fx-background-color: #e63946#e63946; -fx-background-radius: 50;" />
+            <Pane layoutX="475.0" layoutY="205.0" prefHeight="172.0" prefWidth="272.0" style="-fx-background-color: #00A8A8#00A8A8; -fx-background-radius: 50;" />
+            <Pane layoutX="570.0" layoutY="292.0" prefHeight="172.0" prefWidth="272.0" style="-fx-background-color: #27436B#27436B; -fx-background-radius: 50;" />
          </children>
       </AnchorPane>
    </center>
    <cursor>
    </cursor>
    <top>
-      <AnchorPane prefHeight="34.0" prefWidth="600.0" style="-fx-background-color: #00A8A8#00A8A8;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="34.0" prefWidth="900.0" style="-fx-background-color: #00A8A8#00A8A8;" BorderPane.alignment="CENTER">
          <children>
             <MenuButton fx:id="topMenu" layoutX="454.0" layoutY="2.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="146.0" style="-fx-background-color: #00A8A8#00A8A8;" text="username" textFill="WHITE" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <items>
