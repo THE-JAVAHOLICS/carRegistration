@@ -97,13 +97,15 @@ public class Controller {
             logOut();
         } else if(event.getSource() == accountManagement_Menu || event.getSource() == accountManage){
 
-            System.out.println("You clicked accountManagement");
             Parent view = getPage("accountManagement");
             mainPane.setCenter(view);
         }else if(event.getSource() == addCars_Menu || event.getSource()==addACarButton) {
 
-            System.out.println("You clicked addCars");
             Parent view = getPage("addingAcar");
+            mainPane.setCenter(view);
+        }else if(event.getSource() == viewMyCars_Menu){
+
+            Parent view = getPage("viewingCars");
             mainPane.setCenter(view);
         }
 
