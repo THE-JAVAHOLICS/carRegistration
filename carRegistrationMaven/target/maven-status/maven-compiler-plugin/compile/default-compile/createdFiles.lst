@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 org\example\Personal.class
 org\example\accountManagement.class
 org\example\Controller.class
@@ -5,3 +6,6 @@ org\example\Car.class
 org\example\mySqlConnect.class
 module-info.class
 org\example\App.class
+=======
+module-info.class
+>>>>>>> 49597448dd335d0710ddd4814054c543d30ee739

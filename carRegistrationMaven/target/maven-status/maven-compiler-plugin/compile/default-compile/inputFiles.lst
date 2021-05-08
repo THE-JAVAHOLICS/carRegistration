@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\Car.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\mySqlConnect.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\signInController.java
@@ -6,3 +7,13 @@ C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\Pe
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\Controller.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\module-info.java
 C:\Users\omerb\carRegistration\carRegistrationMaven\src\main\java\org\example\App.java
+=======
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/module-info.java
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/org/example/Personal.java
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/org/example/mySqlConnect.java
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/org/example/signInController.java
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/org/example/Controller.java
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/org/example/accountManagement.java
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/org/example/App.java
+/Users/adindechidiogoblessing/carRegistration/carRegistrationMaven/src/main/java/org/example/Car.java
+>>>>>>> 49597448dd335d0710ddd4814054c543d30ee739

@@ -9,13 +9,17 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
+<?import impl.org.controlsfx.*?>
+
+
+
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #8cbed6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SignInController">
    <right>
       <AnchorPane prefHeight="458.0" prefWidth="280.0" style="-fx-background-color: #1AA6B7;" BorderPane.alignment="CENTER_RIGHT">
          <children>
             <TextField id="Username" fx:id="usernam_main" layoutX="66.0" layoutY="139.0" promptText="Username" />
-            <Button fx:id="signIn" layoutX="114.0" layoutY="216.0" mnemonicParsing="false" onAction="#signingIn" style="-fx-background-color: #FE424D;" text="Sign in" textFill="WHITE" />
+            <Button fx:id="signIn" layoutX="114.0" layoutY="216.0" mnemonicParsing="false" onAction="#signingIn" style="-fx-background-color: #FE424D;" text="Sign in" textFill="WHITE" disable="${usernam_main.text.empty}"/>
             <PasswordField fx:id="password_main" layoutX="66.0" layoutY="175.0" promptText="Password" />
             <TextFlow layoutX="42.0" layoutY="287.0" prefHeight="18.0" prefWidth="157.0" textAlignment="CENTER" />
             <Hyperlink fx:id="noAccountClick" layoutX="73.0" layoutY="252.0" onAction="#noAccount" text="Don't have an account?" textAlignment="CENTER" textFill="#daecf3" wrapText="true">

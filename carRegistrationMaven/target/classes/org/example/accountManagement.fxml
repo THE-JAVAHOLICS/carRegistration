@@ -2,19 +2,39 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 
-
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.accountManagement">
-   <children>
-      <TextField fx:id="ID_Username" layoutX="151.0" layoutY="63.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Username" />
-      <TextField fx:id="ID_Password" layoutX="152.0" layoutY="152.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Password" />
-      <TextField fx:id="ID_PasswordConfirm" layoutX="151.0" layoutY="200.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="confirm password" />
-      <TextField fx:id="ID_Email" layoutX="152.0" layoutY="105.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Email" />
-      <CheckBox fx:id="ID_Username_Check" layoutX="373.0" layoutY="62.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" text="Username" />
-      <CheckBox fx:id="ID_Email_Check" layoutX="373.0" layoutY="105.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" text="Email" />
-      <CheckBox fx:id="ID_Password_Check" layoutX="373.0" layoutY="151.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" text="Password" />
-      <Button layoutX="211.0" layoutY="290.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="59.0" prefWidth="178.0" text="Save Changes" />
-   </children>
-</AnchorPane>
+<BorderPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.accountManagement">
+   <right>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #07617D;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="211.0" layoutY="290.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="59.0" prefWidth="178.0" style="-fx-background-color: #303841; -fx-background-radius: 15;" text="Save Changes" textFill="WHITE" />
+            <Pane layoutX="119.0" layoutY="41.0" prefHeight="220.0" prefWidth="363.0" style="-fx-background-color: #903775; -fx-background-radius: 25;">
+               <children>
+                  <TextField fx:id="ID_PasswordConfirm" layoutX="35.0" layoutY="168.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="confirm password" />
+                  <TextField fx:id="ID_Password" layoutX="35.0" layoutY="119.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Password" />
+                  <TextField fx:id="ID_Email" layoutX="35.0" layoutY="72.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Email" />
+               </children>
+            </Pane>
+            <TextField fx:id="ID_Username" layoutX="151.0" layoutY="63.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Username" />
+            <CheckBox fx:id="ID_Username_Check" layoutX="373.0" layoutY="62.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" text="Username" />
+            <CheckBox fx:id="ID_Email_Check" layoutX="373.0" layoutY="105.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" text="Email" />
+            <CheckBox fx:id="ID_Password_Check" layoutX="373.0" layoutY="151.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="88.0" text="Password" />
+            <Circle fill="#eeeeee" layoutX="122.0" layoutY="44.0" radius="26.0" stroke="#eeeeee" strokeType="INSIDE" />
+            <Circle fill="#903775" layoutX="553.0" layoutY="177.0" radius="22.0" stroke="#903775" strokeType="INSIDE" />
+            <Circle fill="#303841" layoutX="531.0" layoutY="331.0" radius="18.0" stroke="#303841" strokeType="INSIDE" />
+            <Circle fill="#eeeeee" layoutX="453.0" layoutY="261.0" radius="36.0" stroke="#eeeeee" strokeType="INSIDE" />
+            <Circle fill="#303841" layoutX="86.0" layoutY="103.0" radius="20.0" stroke="#303841" strokeType="INSIDE" />
+            <Circle fill="#903775" layoutX="62.0" layoutY="243.0" radius="34.0" stroke="#903775" strokeType="INSIDE" />
+            <Circle fill="#eeeeee" layoutX="122.0" layoutY="331.0" radius="16.0" stroke="#eeeeee" strokeType="INSIDE" />
+            <Label layoutX="302.0" layoutY="10.0" text="info" textFill="WHITE" />
+            <Circle fill="#303841" layoutX="527.0" layoutY="73.0" radius="14.0" stroke="#303841" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
+   </right>
+</BorderPane>

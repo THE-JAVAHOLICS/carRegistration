@@ -1,28 +1,19 @@
 
 package org.example;
 
-import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import java.sql.*;
 
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.chart.ScatterChart;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import org.controlsfx.validation.ValidationSupport;
+import org.controlsfx.validation.Validator;
 
 import javax.swing.*;
-import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -132,10 +123,10 @@ public class Car<WebView> implements Initializable {
     }
     @FXML
     private Text numberError;
-    String name;
+    String personUser;
     public void saveChanges() throws Exception{
         try {
-            System.out.println(name);
+            System.out.println(personUser);
             if (Integer.parseInt(carNumber.getText()) <= 99999 && Integer.parseInt(carNumber.getText()) > 0) {
                 System.out.println(Integer.parseInt(carNumber.getText()));
                 numberError.setText(null);
@@ -152,7 +143,7 @@ public class Car<WebView> implements Initializable {
 
 
 
-
+    ValidationSupport valid = new ValidationSupport();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -168,6 +159,7 @@ public class Car<WebView> implements Initializable {
         ObservableList carAlphaList = FXCollections.observableArrayList(alphabeticalGenerator());
         carCode.getItems().addAll(carAlphaList);
 
+        valid.registerValidator(carNumber, Validator.createEmptyValidator("Text Required") );
 
     }
     Connection conn = null;
@@ -175,6 +167,7 @@ public class Car<WebView> implements Initializable {
     PreparedStatement pst = null;
     PreparedStatement pst_id = null;
     public void saveChanges(ActionEvent event) throws Exception {
+        System.out.println(personUser);
         conn = mySqlConnect.ConnectDb();
 
         String sql ="INSERT INTO `cars`(`Car type`, `model`, `Plate code`, `Plate number`, `Color`, `City`, `Chassis`, `username`)" +
@@ -198,7 +191,7 @@ public class Car<WebView> implements Initializable {
                     pst.setString(5, carColor.getValue().toString());
                     pst.setString(6, carCity.getValue().toString());
                     pst.setString(7, CarChassis.getText());
-                    pst.setString(8, name );
+                    pst.setString(8, personUser);
                     pst.execute();
                // }
              //   break;

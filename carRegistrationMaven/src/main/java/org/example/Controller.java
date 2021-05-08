@@ -9,17 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.net.URL;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javax.swing.*;
 
+import javax.swing.text.View;
 
 
 public class Controller {
@@ -97,15 +91,15 @@ public class Controller {
             logOut();
         } else if(event.getSource() == accountManagement_Menu || event.getSource() == accountManage){
 
-            Parent view = getPage("accountManagement");
+            Parent view = getPage("accountManagement", event);
             mainPane.setCenter(view);
         }else if(event.getSource() == addCars_Menu || event.getSource()==addACarButton) {
 
-            Parent view = getPage("addingAcar");
+            Parent view = getPage("addingAcar",event);
             mainPane.setCenter(view);
         }else if(event.getSource() == viewMyCars_Menu){
 
-            Parent view = getPage("viewingCars");
+            Parent view = getPage("viewingCars",event);
             mainPane.setCenter(view);
         }
 
@@ -114,15 +108,25 @@ public class Controller {
 
     private Parent view;
     @FXML
-    public Parent getPage(String fileName) {
+    public Parent getPage(String fileName, ActionEvent event) {
         try {
-            FXMLLoader fileUrl = new FXMLLoader(getClass().getResource("/org/example/"+fileName+".fxml"));
+            System.out.println("1");
+            FXMLLoader fileUrl = new FXMLLoader(getClass().getResource(fileName+".fxml"));
+            System.out.println("2");
             if (fileUrl == null) {
                 throw new java.io.FileNotFoundException("FXML file can't be found");
             }
+            System.out.println("3");
             view = fileUrl.load();
-            Car car = fileUrl.getController();
-            car.name = topMenu.getText();
+            System.out.println("4");
+            if(event.getSource() == addCars_Menu) {
+                Car car = fileUrl.getController();
+                car.personUser = topMenu.getText();
+            }else if(event.getSource() == viewMyCars_Menu){
+                ViewCars viewCars = fileUrl.getController();
+                viewCars.setCarNames(topMenu.getText());
+            }
+
         } catch (Exception e){
             System.out.println("No page " + fileName + " please check FxmlLoader.");
         }
