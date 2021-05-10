@@ -45,9 +45,8 @@ public class accountManagement implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         validationSupport.registerValidator(ID_Password, Validator.createEmptyValidator("Password Required") );
-
-
 
         validationSupport.registerValidator(ID_PasswordConfirm, Validator.createEmptyValidator("Confirm Password") );
 
@@ -62,9 +61,6 @@ public class accountManagement implements Initializable {
         validationSupport.registerValidator(ID_Password_Check, (Control c, Boolean newValue) ->
                 ValidationResult.fromErrorIf(c, "checkbox should be checked", !newValue));
 
-
-
-
-
     }
+
 }

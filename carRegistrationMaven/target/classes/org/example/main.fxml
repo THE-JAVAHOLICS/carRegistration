@@ -9,17 +9,13 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
-<?import impl.org.controlsfx.*?>
 
-
-
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #8cbed6;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SignInController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #8cbed6;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.SignInController">
    <right>
       <AnchorPane prefHeight="458.0" prefWidth="280.0" style="-fx-background-color: #1AA6B7;" BorderPane.alignment="CENTER_RIGHT">
          <children>
             <TextField id="Username" fx:id="usernam_main" layoutX="66.0" layoutY="139.0" promptText="Username" />
-            <Button fx:id="signIn" layoutX="114.0" layoutY="216.0" mnemonicParsing="false" onAction="#signingIn" style="-fx-background-color: #FE424D;" text="Sign in" textFill="WHITE" disable="${usernam_main.text.empty}"/>
+            <Button fx:id="signIn" disable="${usernam_main.text.empty}" layoutX="114.0" layoutY="216.0" mnemonicParsing="false" onAction="#signingIn" style="-fx-background-color: #FE424D;" text="Sign in" textFill="WHITE" />
             <PasswordField fx:id="password_main" layoutX="66.0" layoutY="175.0" promptText="Password" />
             <TextFlow layoutX="42.0" layoutY="287.0" prefHeight="18.0" prefWidth="157.0" textAlignment="CENTER" />
             <Hyperlink fx:id="noAccountClick" layoutX="73.0" layoutY="252.0" onAction="#noAccount" text="Don't have an account?" textAlignment="CENTER" textFill="#daecf3" wrapText="true">
@@ -43,7 +39,7 @@
             <Pane layoutX="54.0" layoutY="-71.0" prefHeight="192.0" prefWidth="214.0" rotate="45.0" style="-fx-background-color: #daecf3#daecf3;" />
             <Pane layoutX="54.0" layoutY="89.0" prefHeight="192.0" prefWidth="214.0" rotate="41.2" style="-fx-background-color: #FE424D;">
                <children>
-                  <Text fill="#daecf3" layoutX="-11.0" layoutY="101.0" rotate="-36.9" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME!">
+                  <Text fill="#daecf3" layoutX="57.0" layoutY="101.0" rotate="-36.9" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME!">
                      <font>
                      </font>
                   </Text>
